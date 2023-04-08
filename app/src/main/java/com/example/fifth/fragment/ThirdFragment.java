@@ -42,8 +42,6 @@ public class ThirdFragment extends Fragment {
         Bundle bundle1 = getArguments();
         binding.textView6.setText(bundle1.getString("name"));
         binding.button3.setOnClickListener(view -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("login", binding.editTextLogin.getText().toString());
             Navigation.findNavController(view).navigate(R.id.action_thirdFragment_to_secondFragment);
         });
     }
