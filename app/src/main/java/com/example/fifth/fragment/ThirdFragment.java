@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,9 +39,12 @@ public class ThirdFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view1, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view1, savedInstanceState);
+        Bundle bundle1 = getArguments();
+        binding.textView6.setText(bundle1.getString("name"));
         binding.button3.setOnClickListener(view -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("login", binding.editTextLogin.getText().toString());
             Navigation.findNavController(view).navigate(R.id.action_thirdFragment_to_secondFragment);
         });
-
     }
 }

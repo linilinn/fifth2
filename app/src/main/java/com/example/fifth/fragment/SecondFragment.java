@@ -40,7 +40,9 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view1, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view1, savedInstanceState);
         binding.button2.setOnClickListener(view -> {
-            Navigation.findNavController(view).navigate(R.id.action_secondFragment_to_thirdFragment);
+            Bundle bundle = new Bundle();
+            bundle.putString("name", binding.editTextTextPersonName.getText().toString());
+            Navigation.findNavController(view).navigate(R.id.action_secondFragment_to_thirdFragment, bundle);
         });
     }
 }
