@@ -3,6 +3,7 @@ package com.example.fifth.fragment;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import androidx.navigation.Navigation;
 import com.example.fifth.MainActivity;
 import com.example.fifth.R;
 import com.example.fifth.databinding.FragmentFirstBinding;
+import com.example.fifth.service.ServiceOne;
 
 public class FirstFragment extends Fragment {
     MainActivity mainActivity;
@@ -84,6 +86,10 @@ public class FirstFragment extends Fragment {
             Navigation.findNavController(view).navigate(R.id.action_firstFragment_to_secondFragment);
         });
         binding.button.setOnClickListener(view -> showNotification());
+        binding.button4.setOnClickListener(view -> {
+            Intent intent = new Intent(mainActivity, ServiceOne.class);
+            mainActivity.startService(intent);
+        });
     }
 
     private void showNotification() {
