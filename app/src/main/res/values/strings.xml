@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mobile Waiter</string>
+    <string name="log_in">Войти</string>
+    <string name="next">Далее</string>
+    <string name="app_for">Приложение для ресторанов</string>
+    <string name="user_name">Имя</string>
+    <string name="start_screen">Как к вам можно обращаться?</string>>
+</resources>
